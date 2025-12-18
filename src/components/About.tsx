@@ -24,16 +24,17 @@ const About = () => {
   }, []);
 
   const stats = [
+    { value: '???', label: 'Unknowns' },
     { value: '∞', label: 'Possibilities' },
-    { value: '0ms', label: 'Latency' },
-    { value: '100%', label: 'Secure' },
+    { value: '0', label: 'Certainties' },
   ];
 
   return (
     <section id="about" ref={sectionRef} className="relative py-24 md:py-32 overflow-hidden">
       {/* Background Orbs */}
-      <GlowOrb color="purple" size="lg" className="-left-48 top-1/2" />
-      <GlowOrb color="cyan" size="md" className="right-0 top-1/4" />
+      <GlowOrb color="mint" size="lg" className="-left-48 top-1/2" />
+      <GlowOrb color="lavender" size="md" className="right-0 top-1/4" />
+      <GlowOrb color="rose" size="sm" className="left-1/3 bottom-0" />
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -46,23 +47,24 @@ const About = () => {
           >
             <div className="relative aspect-square max-w-lg mx-auto">
               {/* Outer ring */}
-              <div className="absolute inset-0 rounded-full border-2 border-glow-cyan/20 animate-orbit" />
+              <div className="absolute inset-0 rounded-full border-2 border-glow-lavender/30 animate-orbit" />
               
               {/* Middle ring */}
-              <div className="absolute inset-8 rounded-full border border-glow-purple/30" style={{ animation: 'orbitSlow 15s linear infinite reverse' }} />
+              <div className="absolute inset-8 rounded-full border border-glow-mint/40" style={{ animation: 'orbitSlow 15s linear infinite reverse' }} />
               
               {/* Inner glow */}
-              <div className="absolute inset-16 rounded-full bg-gradient-to-br from-glow-cyan/20 via-glow-purple/10 to-transparent backdrop-blur-sm" />
+              <div className="absolute inset-16 rounded-full bg-gradient-to-br from-glow-lavender/30 via-glow-mint/20 to-transparent backdrop-blur-sm" />
               
               {/* Center orb */}
-              <div className="absolute inset-24 rounded-full bg-gradient-to-br from-glow-cyan to-glow-purple animate-breathe">
-                <div className="absolute inset-0 rounded-full bg-glow-cyan/30 blur-2xl" />
+              <div className="absolute inset-24 rounded-full bg-gradient-to-br from-glow-lavender to-glow-mint animate-breathe">
+                <div className="absolute inset-0 rounded-full bg-glow-lavender/30 blur-2xl" />
               </div>
 
               {/* Floating elements */}
-              <div className="absolute top-1/4 left-0 w-4 h-4 rounded-full bg-glow-pink animate-float" style={{ animationDelay: '0s' }} />
-              <div className="absolute top-1/2 right-0 w-3 h-3 rounded-full bg-glow-cyan animate-float" style={{ animationDelay: '1s' }} />
-              <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-glow-purple animate-float" style={{ animationDelay: '2s' }} />
+              <div className="absolute top-1/4 left-0 w-4 h-4 rounded-full bg-glow-rose animate-float" style={{ animationDelay: '0s' }} />
+              <div className="absolute top-1/2 right-0 w-3 h-3 rounded-full bg-glow-lavender animate-float" style={{ animationDelay: '1s' }} />
+              <div className="absolute bottom-1/4 left-1/4 w-2 h-2 rounded-full bg-glow-mint animate-float" style={{ animationDelay: '2s' }} />
+              <div className="absolute top-1/3 left-1/3 w-5 h-5 rounded-full bg-glow-peach animate-float" style={{ animationDelay: '1.5s' }} />
             </div>
           </div>
 
@@ -74,7 +76,7 @@ const About = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               )}
             >
-              The Essence
+              WHAT IS THIS?
             </span>
 
             <h2
@@ -84,10 +86,10 @@ const About = () => {
               )}
             >
               <span className="text-foreground">Where </span>
-              <span className="text-gradient">Mystery</span>
+              <span className="text-gradient">Confusion</span>
               <br />
-              <span className="text-foreground">Meets </span>
-              <span className="text-gradient-accent">Innovation</span>
+              <span className="text-foreground">Becomes </span>
+              <span className="text-gradient-accent">Art</span>
             </h2>
 
             <p
@@ -96,9 +98,9 @@ const About = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               )}
             >
-              Forcend exists at the intersection of the known and the unknowable. 
-              We craft experiences that transcend ordinary digital boundaries, 
-              inviting you to explore realms previously unimagined.
+              Forcend isn't meant to make sense. It's a visual playground 
+              exploring the aesthetics of AI, cryptocurrency, and future technologies—
+              all wrapped in dreamy pastel chaos.
             </p>
 
             <p
@@ -107,8 +109,8 @@ const About = () => {
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
               )}
             >
-              Our technology doesn't just respond—it anticipates. It doesn't just process—it understands. 
-              Enter a space where every interaction reveals something new about what's possible.
+              This page exists purely to confuse and delight. If you understand it completely, 
+              you're probably doing it wrong. <span className="text-glow-rose">Embrace the ambiguity.</span>
             </p>
 
             {/* Stats */}
@@ -121,7 +123,7 @@ const About = () => {
               {stats.map((stat, index) => (
                 <div
                   key={stat.label}
-                  className="text-center p-4 rounded-2xl glass"
+                  className="text-center p-4 rounded-2xl glass interactive hover:scale-105 transition-transform"
                   style={{ transitionDelay: `${500 + index * 100}ms` }}
                 >
                   <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">

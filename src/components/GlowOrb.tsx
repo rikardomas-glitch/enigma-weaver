@@ -2,17 +2,19 @@ import { cn } from '@/lib/utils';
 
 interface GlowOrbProps {
   className?: string;
-  color?: 'cyan' | 'purple' | 'pink' | 'blue';
+  color?: 'lavender' | 'mint' | 'peach' | 'sky' | 'rose' | 'lemon';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   animate?: boolean;
 }
 
-const GlowOrb = ({ className, color = 'cyan', size = 'lg', animate = true }: GlowOrbProps) => {
+const GlowOrb = ({ className, color = 'lavender', size = 'lg', animate = true }: GlowOrbProps) => {
   const colorClasses = {
-    cyan: 'bg-glow-cyan',
-    purple: 'bg-glow-purple',
-    pink: 'bg-glow-pink',
-    blue: 'bg-glow-blue',
+    lavender: 'bg-glow-lavender',
+    mint: 'bg-glow-mint',
+    peach: 'bg-glow-peach',
+    sky: 'bg-glow-sky',
+    rose: 'bg-glow-rose',
+    lemon: 'bg-glow-lemon',
   };
 
   const sizeClasses = {
@@ -25,7 +27,7 @@ const GlowOrb = ({ className, color = 'cyan', size = 'lg', animate = true }: Glo
   return (
     <div
       className={cn(
-        'absolute rounded-full blur-3xl opacity-30 pointer-events-none',
+        'absolute rounded-full blur-3xl opacity-40 pointer-events-none',
         colorClasses[color],
         sizeClasses[size],
         animate && 'animate-pulse-glow',
