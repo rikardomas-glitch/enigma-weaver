@@ -24,10 +24,12 @@ const ParticleField = () => {
     if (!ctx) return;
 
     const colors = [
-      'rgba(0, 240, 255, ',    // cyan
-      'rgba(139, 92, 246, ',   // purple
-      'rgba(255, 0, 128, ',    // pink
-      'rgba(59, 130, 246, ',   // blue
+      'rgba(178, 132, 190, ',  // lavender
+      'rgba(134, 199, 178, ',  // mint
+      'rgba(245, 180, 160, ',  // peach
+      'rgba(160, 200, 230, ',  // sky
+      'rgba(230, 160, 180, ',  // rose
+      'rgba(230, 220, 160, ',  // lemon
     ];
 
     const resize = () => {
@@ -84,7 +86,7 @@ const ParticleField = () => {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(0, 240, 255, ${opacity})`;
+            ctx.strokeStyle = `rgba(178, 132, 190, ${opacity})`;
             ctx.lineWidth = 0.5;
             ctx.stroke();
           }

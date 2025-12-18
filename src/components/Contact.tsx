@@ -30,8 +30,8 @@ const Contact = () => {
     e.preventDefault();
     if (email) {
       toast({
-        title: "Message received",
-        description: "We'll be in touch from the other side.",
+        title: "Transmission sent",
+        description: "Your message has entered the void. Maybe.",
       });
       setEmail('');
     }
@@ -53,7 +53,7 @@ const Contact = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             )}
           >
-            Connect
+            MAKE CONTACT (OR DON'T)
           </span>
 
           <h2
@@ -63,7 +63,7 @@ const Contact = () => {
             )}
           >
             <span className="text-foreground">Enter the </span>
-            <span className="text-gradient">Nexus</span>
+            <span className="text-gradient">Void</span>
           </h2>
 
           <p
@@ -72,7 +72,7 @@ const Contact = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             )}
           >
-            Ready to transcend? Leave your coordinates and we'll find you.
+            Want to be even more confused? Leave your email and we'll send you... something.
           </p>
 
           {/* Email Form */}
@@ -89,18 +89,18 @@ const Contact = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="w-full px-6 py-4 pr-14 rounded-2xl bg-muted/50 border border-border focus:border-glow-cyan/50 focus:outline-none focus:ring-2 focus:ring-glow-cyan/20 text-foreground placeholder:text-muted-foreground transition-all duration-300"
+                className="w-full px-6 py-4 pr-14 rounded-2xl bg-card border border-border focus:border-glow-lavender/50 focus:outline-none focus:ring-2 focus:ring-glow-lavender/20 text-foreground placeholder:text-muted-foreground transition-all duration-300 interactive"
                 required
               />
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-gradient-to-r from-glow-cyan to-glow-purple flex items-center justify-center hover:scale-105 transition-transform"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-xl bg-gradient-to-r from-glow-lavender to-glow-mint flex items-center justify-center hover:scale-105 transition-transform interactive"
               >
-                <Send className="w-4 h-4 text-background" />
+                <Send className="w-4 h-4 text-foreground" />
               </button>
               
               {/* Glow effect */}
-              <div className="absolute inset-0 rounded-2xl bg-glow-cyan/10 blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity -z-10" />
+              <div className="absolute inset-0 rounded-2xl bg-glow-lavender/10 blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity -z-10" />
             </div>
           </form>
 
@@ -115,7 +115,7 @@ const Contact = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="group flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors"
+                className="group flex items-center gap-1 text-muted-foreground hover:text-foreground transition-colors interactive"
               >
                 {link.name}
                 <ArrowUpRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />

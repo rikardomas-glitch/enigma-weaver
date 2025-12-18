@@ -1,43 +1,43 @@
 import { useEffect, useRef, useState } from 'react';
-import { Zap, Shield, Infinity, Eye, Layers, Cpu } from 'lucide-react';
+import { Brain, Coins, Rocket, Eye, Layers, Cpu } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const features = [
   {
-    icon: Zap,
-    title: 'Lightning Fast',
-    description: 'Experience blazing performance that transcends conventional limits.',
-    color: 'cyan',
+    icon: Brain,
+    title: 'Neural Networks',
+    description: 'AI that thinks in colors you\'ve never seen.',
+    color: 'lavender',
   },
   {
-    icon: Shield,
-    title: 'Impenetrable',
-    description: 'Security woven into the fabric of existence itself.',
-    color: 'purple',
+    icon: Coins,
+    title: 'Crypto Chaos',
+    description: 'Decentralized everything. Trust no one. Trust everyone.',
+    color: 'mint',
   },
   {
-    icon: Infinity,
-    title: 'Limitless',
-    description: 'Boundaries dissolve in the face of infinite possibility.',
-    color: 'pink',
+    icon: Rocket,
+    title: 'Future Tech',
+    description: 'Technologies from timelines that may not exist yet.',
+    color: 'peach',
   },
   {
     icon: Eye,
     title: 'All-Seeing',
-    description: 'Insights that pierce through the veil of uncertainty.',
-    color: 'blue',
+    description: 'Insights that question the nature of insight itself.',
+    color: 'sky',
   },
   {
     icon: Layers,
-    title: 'Multi-Dimensional',
-    description: 'Navigate layers of reality with seamless precision.',
-    color: 'cyan',
+    title: 'Multi-Reality',
+    description: 'Navigate parallel dimensions through a single interface.',
+    color: 'rose',
   },
   {
     icon: Cpu,
-    title: 'Sentient Core',
-    description: 'Intelligence that evolves beyond programmed horizons.',
-    color: 'purple',
+    title: 'Quantum Dreams',
+    description: 'Computing that exists in superposition until observed.',
+    color: 'lemon',
   },
 ];
 
@@ -63,17 +63,21 @@ const FeatureCard = ({ feature, index }: { feature: typeof features[0]; index: n
   }, []);
 
   const colorClasses = {
-    cyan: 'from-glow-cyan/20 to-transparent border-glow-cyan/30 hover:border-glow-cyan/50',
-    purple: 'from-glow-purple/20 to-transparent border-glow-purple/30 hover:border-glow-purple/50',
-    pink: 'from-glow-pink/20 to-transparent border-glow-pink/30 hover:border-glow-pink/50',
-    blue: 'from-glow-blue/20 to-transparent border-glow-blue/30 hover:border-glow-blue/50',
+    lavender: 'from-glow-lavender/20 to-transparent border-glow-lavender/30 hover:border-glow-lavender/60',
+    mint: 'from-glow-mint/20 to-transparent border-glow-mint/30 hover:border-glow-mint/60',
+    peach: 'from-glow-peach/20 to-transparent border-glow-peach/30 hover:border-glow-peach/60',
+    sky: 'from-glow-sky/20 to-transparent border-glow-sky/30 hover:border-glow-sky/60',
+    rose: 'from-glow-rose/20 to-transparent border-glow-rose/30 hover:border-glow-rose/60',
+    lemon: 'from-glow-lemon/20 to-transparent border-glow-lemon/30 hover:border-glow-lemon/60',
   };
 
   const iconColorClasses = {
-    cyan: 'text-glow-cyan',
-    purple: 'text-glow-purple',
-    pink: 'text-glow-pink',
-    blue: 'text-glow-blue',
+    lavender: 'text-glow-lavender',
+    mint: 'text-glow-mint',
+    peach: 'text-glow-peach',
+    sky: 'text-glow-sky',
+    rose: 'text-glow-rose',
+    lemon: 'text-glow-lemon',
   };
 
   const Icon = feature.icon;
@@ -82,24 +86,22 @@ const FeatureCard = ({ feature, index }: { feature: typeof features[0]; index: n
     <div
       ref={ref}
       className={cn(
-        'group relative p-6 md:p-8 rounded-3xl border bg-gradient-to-b transition-all duration-500 cursor-pointer',
+        'group relative p-6 md:p-8 rounded-3xl border bg-gradient-to-b transition-all duration-500 interactive',
         colorClasses[feature.color as keyof typeof colorClasses],
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10',
+        'hover:scale-105 hover:rotate-1'
       )}
       style={{ transitionDelay: `${index * 100}ms` }}
     >
       {/* Glow effect on hover */}
       <div className={cn(
         'absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl',
-        feature.color === 'cyan' && 'bg-glow-cyan/10',
-        feature.color === 'purple' && 'bg-glow-purple/10',
-        feature.color === 'pink' && 'bg-glow-pink/10',
-        feature.color === 'blue' && 'bg-glow-blue/10'
+        `bg-glow-${feature.color}/20`
       )} />
 
       <div className="relative z-10">
         <div className={cn(
-          'w-14 h-14 rounded-2xl flex items-center justify-center mb-6 glass',
+          'w-14 h-14 rounded-2xl flex items-center justify-center mb-6 glass group-hover:animate-wobble',
           iconColorClasses[feature.color as keyof typeof iconColorClasses]
         )}>
           <Icon className="w-7 h-7" />
@@ -149,7 +151,7 @@ const Features = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             )}
           >
-            Capabilities
+            CAPABILITIES (MAYBE)
           </span>
 
           <h2
@@ -158,8 +160,9 @@ const Features = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             )}
           >
-            <span className="text-foreground">Unlock the </span>
-            <span className="text-gradient-accent">Unknown</span>
+            <span className="text-foreground">What We </span>
+            <span className="text-gradient-accent">Probably</span>
+            <span className="text-foreground"> Do</span>
           </h2>
 
           <p
@@ -168,7 +171,7 @@ const Features = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
             )}
           >
-            Discover powers that exist beyond the threshold of ordinary perception.
+            Discover capabilities that may or may not exist in your current timeline.
           </p>
         </div>
 
